@@ -1,13 +1,7 @@
 import argparse
 
 import zope.copy
-from persistent import Persistent
 from zope.container.btree import BTreeContainer
-from zope.container.contained import Contained
-
-
-class SimpleItem(Persistent, Contained):
-    pass
 
 
 def main():
@@ -17,7 +11,7 @@ def main():
     args = parser.parse_args()
     obj = BTreeContainer()
     for n in range(args.n):
-        obj[str(n)] = SimpleItem(obj)
+        obj[str(n)] = None
     zope.copy.clone(obj)
     print(f"{len(obj)} items: success!")
 
