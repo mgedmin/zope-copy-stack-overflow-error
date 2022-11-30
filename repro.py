@@ -2,7 +2,7 @@ import zope.copy
 from zope.container.btree import BTreeContainer
 
 
-N_ITEMS = 8000
+N_ITEMS = 8000   # 7761 was the smallest value that raised RuntimeError
 
 
 def test_clone_large_btree_container():
